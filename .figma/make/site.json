@@ -1,0 +1,10 @@
+{
+  "description": "Browse movies, compare showtimes, choose cinema seats, and book tickets with ease for a premium, seamless movie-going experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
