@@ -120,64 +120,64 @@ const movies = [
   {
     id: 1,
     title: "Eclipse Protocol",
-    genre: "Sci-Fi · Thriller",
+    genre: "Fiksi Ilmiah · Thriller",
     rating: "8.9",
-    duration: "2h 18m",
+    duration: "2j 18m",
     poster: "/assets/eclipse-protocol.png",
-    release: "Now showing",
+    release: "Sedang tayang",
   },
   {
     id: 2,
     title: "The Last Horizon",
-    genre: "Drama · Adventure",
+    genre: "Drama · Petualangan",
     rating: "8.6",
-    duration: "2h 05m",
+    duration: "2j 05m",
     poster:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=90",
-    release: "Now showing",
+    release: "Sedang tayang",
   },
   {
     id: 3,
     title: "Neon District",
-    genre: "Action · Crime",
+    genre: "Aksi · Kriminal",
     rating: "8.2",
-    duration: "1h 56m",
+    duration: "1j 56m",
     poster:
       "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=90",
-    release: "Now showing",
+    release: "Sedang tayang",
   },
   {
     id: 4,
     title: "Silent Depths",
-    genre: "Mystery · Thriller",
+    genre: "Misteri · Thriller",
     rating: "7.9",
-    duration: "1h 48m",
+    duration: "1j 48m",
     poster:
       "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=90",
-    release: "Now showing",
+    release: "Sedang tayang",
   },
   {
     id: 5,
     title: "Ashes of Tomorrow",
-    genre: "Fantasy · Drama",
+    genre: "Fantasi · Drama",
     rating: "8.4",
-    duration: "2h 12m",
+    duration: "2j 12m",
     poster:
       "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=90",
-    release: "Now showing",
+    release: "Sedang tayang",
   },
 ];
 
 const upcoming = [
   {
     title: "Aurora",
-    date: "18 OCT",
+    date: "18 OKT",
     image:
       "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=90",
   },
   {
     title: "Beyond Earth",
-    date: "26 OCT",
+    date: "26 OKT",
     image:
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=90",
   },
@@ -233,7 +233,7 @@ function Button({
 
 function Logo({ go }: { go: (p: Page) => void }) {
   return (
-    <button className="logo" onClick={() => go("home")} aria-label="CINÉRA home">
+    <button className="logo" onClick={() => go("home")} aria-label="Beranda CINÉRA">
       <span className="logo-mark">C</span>
       <span>CINÉRA</span>
     </button>
@@ -242,9 +242,9 @@ function Logo({ go }: { go: (p: Page) => void }) {
 
 function Navbar({ page, go }: { page: Page; go: (p: Page) => void }) {
   const links: { label: string; page: Page }[] = [
-    { label: "Home", page: "home" },
-    { label: "Movies", page: "movies" },
-    { label: "Cinemas", page: "cinemas" },
+    { label: "Beranda", page: "home" },
+    { label: "Film", page: "movies" },
+    { label: "Bioskop", page: "cinemas" },
   ];
   return (
     <header className="navbar">
@@ -269,18 +269,18 @@ function Navbar({ page, go }: { page: Page; go: (p: Page) => void }) {
               );
             }}
           >
-            Coming Soon
+            Segera Hadir
           </button>
         </nav>
         <div className="nav-actions">
-          <button className="icon-button" aria-label="Search" onClick={() => go("movies")}>
+          <button className="icon-button" aria-label="Cari" onClick={() => go("movies")}>
             <Icon name="search" />
           </button>
           <button className="signin" onClick={() => go("login")}>
-            <Icon name="user" size={18} /> Sign in
+            <Icon name="user" size={18} /> Masuk
           </button>
           <Button onClick={() => go("movies")}>
-            <Icon name="ticket" size={17} /> Get tickets
+            <Icon name="ticket" size={17} /> Beli tiket
           </Button>
         </div>
       </div>
@@ -300,11 +300,11 @@ function MovieCard({ movie, go }: { movie: (typeof movies)[0]; go: (p: Page) => 
   return (
     <article className="movie-card" onClick={() => go("details")}>
       <div className="poster-wrap">
-        <img src={movie.poster} alt={`${movie.title} poster`} />
+        <img src={movie.poster} alt={`Poster ${movie.title}`} />
         <div className="poster-rating">
           <Rating value={movie.rating} />
         </div>
-        <button className="poster-play" aria-label={`View ${movie.title}`}>
+        <button className="poster-play" aria-label={`Lihat ${movie.title}`}>
           <Icon name="play" />
         </button>
       </div>
@@ -320,7 +320,7 @@ function MovieCard({ movie, go }: { movie: (typeof movies)[0]; go: (p: Page) => 
             go("cinemas");
           }}
         >
-          Book now <Icon name="arrow" size={15} />
+          Pesan sekarang <Icon name="arrow" size={15} />
         </button>
       </div>
     </article>
@@ -362,7 +362,7 @@ function Home({ go }: { go: (p: Page) => void }) {
         <div className="hero-content container">
           <div className="hero-copy">
             <div className="hero-kicker">
-              <span>FEATURED PREMIERE</span>
+              <span>PREMIER UNGGULAN</span>
               <span className="line" />
             </div>
             <h1>
@@ -372,20 +372,20 @@ function Home({ go }: { go: (p: Page) => void }) {
             </h1>
             <div className="hero-facts">
               <Rating value="8.9" />
-              <span>SCI-FI · THRILLER</span>
-              <span>2H 18M</span>
+              <span>FIKSI ILMIAH · THRILLER</span>
+              <span>2J 18M</span>
               <span className="age">PG-13</span>
             </div>
             <p>
-              When the sun disappears without warning, one astronaut must cross the edge of the
-              known universe to bring the light home.
+              Saat matahari lenyap tanpa peringatan, seorang astronot harus melintasi tepi alam
+              semesta yang dikenal untuk membawa cahaya pulang.
             </p>
             <div className="hero-buttons">
               <Button onClick={() => go("cinemas")}>
-                <Icon name="ticket" size={19} /> Book tickets
+                <Icon name="ticket" size={19} /> Pesan tiket
               </Button>
               <Button variant="outline">
-                <Icon name="play" size={19} /> Watch trailer
+                <Icon name="play" size={19} /> Tonton trailer
               </Button>
             </div>
           </div>
@@ -403,9 +403,9 @@ function Home({ go }: { go: (p: Page) => void }) {
 
       <section className="section container">
         <SectionHeading
-          eyebrow="IN THEATERS"
-          title="Now showing"
-          action="View all movies"
+          eyebrow="DI BIOSKOP"
+          title="Sedang tayang"
+          action="Lihat semua film"
           onAction={() => go("movies")}
         />
         <div className="movie-grid">
@@ -418,9 +418,9 @@ function Home({ go }: { go: (p: Page) => void }) {
       <section className="section coming-section" id="coming">
         <div className="container">
           <SectionHeading
-            eyebrow="SAVE THE DATE"
-            title="Coming soon"
-            action="Explore releases"
+            eyebrow="CATAT TANGGALNYA"
+            title="Segera hadir"
+            action="Jelajahi rilis mendatang"
             onAction={() => go("movies")}
           />
           <div className="upcoming-grid">
@@ -433,7 +433,7 @@ function Home({ go }: { go: (p: Page) => void }) {
                 </div>
                 <div className="upcoming-overlay">
                   <h3>{m.title}</h3>
-                  <p>Advance booking soon</p>
+                  <p>Pemesanan segera dibuka</p>
                 </div>
               </article>
             ))}
@@ -442,25 +442,25 @@ function Home({ go }: { go: (p: Page) => void }) {
       </section>
 
       <section className="section experience container">
-        <SectionHeading eyebrow="MORE THAN A MOVIE" title="The CINÉRA experience" />
+        <SectionHeading eyebrow="LEBIH DARI SEKADAR FILM" title="Pengalaman CINÉRA" />
         <div className="feature-grid">
           <article>
             <span className="feature-no">01</span>
             <Icon name="ticket" size={28} />
-            <h3>Effortless booking</h3>
-            <p>Your perfect seat, secured in a few thoughtful clicks. No queues, no friction.</p>
+            <h3>Pemesanan tanpa ribet</h3>
+            <p>Kursi terbaikmu, terpesan hanya dengan beberapa klik. Tanpa antre, tanpa repot.</p>
           </article>
           <article>
             <span className="feature-no">02</span>
             <Icon name="spark" size={28} />
-            <h3>Made to immerse</h3>
-            <p>Laser projection, spatial sound and designed-for-comfort luxury seating.</p>
+            <h3>Imersif sepenuhnya</h3>
+            <p>Proyeksi laser, suara spasial, dan kursi mewah yang dirancang untuk kenyamanan.</p>
           </article>
           <article>
             <span className="feature-no">03</span>
             <Icon name="shield" size={28} />
-            <h3>Secure by design</h3>
-            <p>Protected payments and instant digital tickets, every single time.</p>
+            <h3>Aman sejak dirancang</h3>
+            <p>Pembayaran terlindungi dan tiket digital instan, setiap saat.</p>
           </article>
         </div>
       </section>
@@ -473,25 +473,25 @@ function Movies({ go }: { go: (p: Page) => void }) {
   return (
     <main className="page container">
       <div className="page-title">
-        <span className="eyebrow">DISCOVER YOUR NEXT STORY</span>
-        <h1>Movies</h1>
-        <p>From unforgettable premieres to timeless stories — curated for the big screen.</p>
+        <span className="eyebrow">TEMUKAN KISAH BERIKUTNYA</span>
+        <h1>Film</h1>
+        <p>Dari premier tak terlupakan hingga kisah abadi — dikurasi untuk layar lebar.</p>
       </div>
       <div className="catalog-tools">
         <div className="tabs">
           <button className={tab === "now" ? "active" : ""} onClick={() => setTab("now")}>
-            Now showing <span>12</span>
+            Sedang tayang <span>12</span>
           </button>
           <button className={tab === "soon" ? "active" : ""} onClick={() => setTab("soon")}>
-            Coming soon <span>08</span>
+            Segera hadir <span>08</span>
           </button>
         </div>
         <div className="filters">
           <label className="search-field">
             <Icon name="search" size={18} />
-            <input placeholder="Search movies" />
+            <input placeholder="Cari film" />
           </label>
-          {["All genres", "Rating", "Availability"].map((f) => (
+          {["Semua genre", "Rating", "Ketersediaan"].map((f) => (
             <button className="filter-button" key={f}>
               {f}
               <span>⌄</span>
@@ -516,9 +516,9 @@ function Movies({ go }: { go: (p: Page) => void }) {
               <div className="movie-meta">
                 <div>
                   <h3>{m.title}</h3>
-                  <p>Sci-Fi · Drama</p>
+                  <p>Fiksi Ilmiah · Drama</p>
                 </div>
-                <button className="book-link">Remind me</button>
+                <button className="book-link">Ingatkan aku</button>
               </div>
             </article>
           ))}
@@ -538,12 +538,12 @@ function Details({ go }: { go: (p: Page) => void }) {
         <div className="detail-poster">
           <img src="/assets/eclipse-protocol.png" alt="Eclipse Protocol" />
           <button>
-            <Icon name="play" /> Play trailer
+            <Icon name="play" /> Putar trailer
           </button>
         </div>
         <div className="detail-copy">
           <div className="hero-kicker">
-            <span>NOW SHOWING</span>
+            <span>SEDANG TAYANG</span>
             <span className="line" />
           </div>
           <h1>
@@ -551,40 +551,40 @@ function Details({ go }: { go: (p: Page) => void }) {
           </h1>
           <div className="hero-facts">
             <Rating value="8.9" />
-            <span>SCI-FI · THRILLER</span>
-            <span>2H 18M</span>
+            <span>FIKSI ILMIAH · THRILLER</span>
+            <span>2J 18M</span>
             <span className="age">PG-13</span>
           </div>
           <p className="synopsis">
-            When the sun disappears without warning, a disgraced astronaut is recruited for one
-            impossible mission: cross the edge of the known universe and bring the light home before
-            Earth falls silent forever.
+            Saat matahari lenyap tanpa peringatan, seorang astronot yang dipermalukan direkrut untuk
+            satu misi mustahil: melintasi tepi alam semesta dan membawa cahaya pulang sebelum
+            Bumi terdiam selamanya.
           </p>
           <dl className="detail-list">
             <div>
-              <dt>Director</dt>
+              <dt>Sutradara</dt>
               <dd>Elena Voss</dd>
             </div>
             <div>
-              <dt>Release date</dt>
-              <dd>September 27, 2025</dd>
+              <dt>Tanggal rilis</dt>
+              <dd>27 September 2025</dd>
             </div>
             <div>
-              <dt>Cast</dt>
+              <dt>Pemeran</dt>
               <dd>Mara Chen, Elliot Reeve, Soren Vale</dd>
             </div>
             <div>
-              <dt>Languages</dt>
-              <dd>English, French</dd>
+              <dt>Bahasa</dt>
+              <dd>Inggris, Prancis</dd>
             </div>
           </dl>
           <Button onClick={() => go("cinemas")}>
-            <Icon name="ticket" size={18} /> Select a showtime
+            <Icon name="ticket" size={18} /> Pilih jam tayang
           </Button>
         </div>
       </div>
       <section className="container trailer-strip">
-        <SectionHeading eyebrow="OFFICIAL TRAILER" title="A journey beyond the light" />
+        <SectionHeading eyebrow="TRAILER RESMI" title="Perjalanan melampaui cahaya" />
         <div className="trailer-frame">
           <img src="/assets/eclipse-protocol.png" alt="" />
           <button>
@@ -599,7 +599,7 @@ function Details({ go }: { go: (p: Page) => void }) {
 function Progress({ current }: { current: number }) {
   return (
     <div className="progress-bar">
-      {["Showtime", "Seats", "Payment"].map((label, i) => (
+      {["Jam tayang", "Kursi", "Pembayaran"].map((label, i) => (
         <div className={i + 1 <= current ? "done" : ""} key={label}>
           <span>{i + 1 < current ? <Icon name="check" size={14} /> : i + 1}</span>
           <b>{label}</b>
@@ -613,35 +613,35 @@ function Progress({ current }: { current: number }) {
 function Cinemas({ go }: { go: (p: Page) => void }) {
   const [cinema, setCinema] = useState(0);
   const [date, setDate] = useState(1);
-  const [time, setTime] = useState("7:20 PM");
+  const [time, setTime] = useState("19.20");
   const dates = [
-    ["FRI", "27"],
-    ["SAT", "28"],
-    ["SUN", "29"],
-    ["MON", "30"],
-    ["TUE", "01"],
-    ["WED", "02"],
+    ["JUM", "27"],
+    ["SAB", "28"],
+    ["MIN", "29"],
+    ["SEN", "30"],
+    ["SEL", "01"],
+    ["RAB", "02"],
   ];
   return (
     <main className="page container booking-page">
       <Progress current={1} />
       <div className="booking-heading">
         <div>
-          <span className="eyebrow">BOOK TICKETS</span>
-          <h1>Choose your showtime</h1>
+          <span className="eyebrow">PESAN TIKET</span>
+          <h1>Pilih jam tayangmu</h1>
         </div>
         <div className="mini-movie">
           <img src="/assets/eclipse-protocol.png" alt="" />
           <div>
             <h3>Eclipse Protocol</h3>
-            <p>Sci-Fi · Thriller · 2h 18m</p>
+            <p>Fiksi Ilmiah · Thriller · 2j 18m</p>
           </div>
         </div>
       </div>
       <div className="booking-grid">
         <section>
           <h3 className="step-title">
-            <span>01</span>Select a date
+            <span>01</span>Pilih tanggal
           </h3>
           <div className="date-row">
             {dates.map((d, i) => (
@@ -652,12 +652,12 @@ function Cinemas({ go }: { go: (p: Page) => void }) {
               >
                 <span>{d[0]}</span>
                 <b>{d[1]}</b>
-                <small>{i === 1 ? "TODAY" : "SEP"}</small>
+                <small>{i === 1 ? "HARI INI" : "SEP"}</small>
               </button>
             ))}
           </div>
           <h3 className="step-title">
-            <span>02</span>Choose a cinema
+            <span>02</span>Pilih bioskop
           </h3>
           <div className="cinema-list">
             {cinemas.map((c, i) => (
@@ -680,23 +680,23 @@ function Cinemas({ go }: { go: (p: Page) => void }) {
                     ))}
                   </div>
                 </div>
-                <span className="distance">{(1.2 + i * 1.5).toFixed(1)} mi</span>
+                <span className="distance">{(1.2 + i * 1.5).toFixed(1)} mil</span>
               </article>
             ))}
           </div>
         </section>
         <aside className="showtime-panel">
-          <span className="eyebrow">AVAILABLE TIMES</span>
+          <span className="eyebrow">JAM TERSEDIA</span>
           <h2>{cinemas[cinema].name}</h2>
-          <p>Saturday, September 28</p>
+          <p>Sabtu, 28 September</p>
           {["IMAX · LASER", "2D · DOLBY ATMOS", "VIP · RECLINER"].map((format, i) => (
             <div className="time-group" key={format}>
               <h4>{format}</h4>
               <div>
                 {[
-                  ["4:10 PM", "7:20 PM", "10:30 PM"],
-                  ["3:40 PM", "6:50 PM", "9:55 PM"],
-                  ["5:20 PM", "8:35 PM"],
+                  ["16.10", "19.20", "22.30"],
+                  ["15.40", "18.50", "21.55"],
+                  ["17.20", "20.35"],
                 ][i].map((t) => (
                   <button className={time === t ? "active" : ""} onClick={() => setTime(t)} key={t}>
                     {t}
@@ -707,7 +707,7 @@ function Cinemas({ go }: { go: (p: Page) => void }) {
             </div>
           ))}
           <Button onClick={() => go("seats")}>
-            Choose seats <Icon name="arrow" size={18} />
+            Pilih kursi <Icon name="arrow" size={18} />
           </Button>
         </aside>
       </div>
@@ -740,17 +740,17 @@ function Seats({ go }: { go: (p: Page) => void }) {
       <div className="booking-heading">
         <div>
           <span className="eyebrow">CINÉRA GRAND CENTRAL · IMAX</span>
-          <h1>Select your seats</h1>
-          <p>Sat, Sep 28 · 7:20 PM</p>
+          <h1>Pilih kursimu</h1>
+          <p>Sab, 28 Sep · 19.20</p>
         </div>
         <button className="change-link" onClick={() => go("cinemas")}>
-          Change showtime
+          Ubah jam tayang
         </button>
       </div>
       <div className="seat-layout">
         <section className="seat-map">
           <div className="screen">
-            <span>SCREEN</span>
+            <span>LAYAR</span>
           </div>
           <div className="seats">
             {"ABCDEFGH".split("").map((row, r) => (
@@ -761,7 +761,7 @@ function Seats({ go }: { go: (p: Page) => void }) {
                     disabled={occupied.includes(s)}
                     onClick={() => toggle(s)}
                     className={`${selected.includes(s) ? "selected" : ""} ${i === 2 || i === 10 ? "aisle" : ""}`}
-                    aria-label={`Seat ${s}`}
+                    aria-label={`Kursi ${s}`}
                     key={s}
                   >
                     {i + 1}
@@ -774,20 +774,20 @@ function Seats({ go }: { go: (p: Page) => void }) {
           <div className="seat-legend">
             <span>
               <i className="available" />
-              Available
+              Tersedia
             </span>
             <span>
               <i className="chosen" />
-              Selected
+              Dipilih
             </span>
             <span>
               <i className="occupied" />
-              Occupied
+              Terisi
             </span>
           </div>
         </section>
         <aside className="summary-card">
-          <span className="eyebrow">YOUR BOOKING</span>
+          <span className="eyebrow">PESANANMU</span>
           <div className="summary-movie">
             <img src="/assets/eclipse-protocol.png" alt="" />
             <div>
@@ -798,30 +798,30 @@ function Seats({ go }: { go: (p: Page) => void }) {
           <dl>
             <div>
               <dt>
-                <Icon name="calendar" /> Date
+                <Icon name="calendar" /> Tanggal
               </dt>
-              <dd>Sat, Sep 28</dd>
+              <dd>Sab, 28 Sep</dd>
             </div>
             <div>
               <dt>
-                <Icon name="clock" /> Time
+                <Icon name="clock" /> Waktu
               </dt>
-              <dd>7:20 PM</dd>
+              <dd>19.20</dd>
             </div>
             <div>
               <dt>
-                <Icon name="pin" /> Cinema
+                <Icon name="pin" /> Bioskop
               </dt>
               <dd>Grand Central</dd>
             </div>
           </dl>
           <div className="selected-box">
-            <span>Selected seats</span>
+            <span>Kursi dipilih</span>
             <div>
               {selected.length ? (
                 selected.map((s) => <b key={s}>{s}</b>)
               ) : (
-                <small>Choose a seat</small>
+                <small>Pilih kursi</small>
               )}
             </div>
           </div>
@@ -832,7 +832,7 @@ function Seats({ go }: { go: (p: Page) => void }) {
             <strong>${(selected.length * 24).toFixed(2)}</strong>
           </div>
           <Button onClick={() => selected.length && go("checkout")}>
-            Continue to payment <Icon name="arrow" size={17} />
+            Lanjut ke pembayaran <Icon name="arrow" size={17} />
           </Button>
         </aside>
       </div>
@@ -848,17 +848,17 @@ function Checkout({ go }: { go: (p: Page) => void }) {
         <div className="success-icon">
           <Icon name="check" size={38} />
         </div>
-        <span className="eyebrow">PAYMENT CONFIRMED</span>
-        <h1>You’re going to the movies.</h1>
-        <p>Your tickets are ready. We’ve also sent a confirmation to your email.</p>
+        <span className="eyebrow">PEMBAYARAN DIKONFIRMASI</span>
+        <h1>Kamu akan nonton film.</h1>
+        <p>Tiketmu sudah siap. Kami juga sudah mengirim konfirmasi ke emailmu.</p>
         <div className="confirmation-no">
-          BOOKING REFERENCE <b>CNR-2809-EP7F</b>
+          KODE PEMESANAN <b>CNR-2809-EP7F</b>
         </div>
         <Button onClick={() => go("tickets")}>
-          View my tickets <Icon name="ticket" />
+          Lihat tiketku <Icon name="ticket" />
         </Button>
         <button className="text-link" onClick={() => go("home")}>
-          Back to home
+          Kembali ke beranda
         </button>
       </main>
     );
@@ -867,41 +867,41 @@ function Checkout({ go }: { go: (p: Page) => void }) {
       <Progress current={3} />
       <div className="booking-heading">
         <div>
-          <span className="eyebrow">SECURE CHECKOUT</span>
-          <h1>Complete your booking</h1>
+          <span className="eyebrow">CHECKOUT AMAN</span>
+          <h1>Selesaikan pemesananmu</h1>
         </div>
         <span className="secure-note">
-          <Icon name="shield" size={17} /> Secure payment
+          <Icon name="shield" size={17} /> Pembayaran aman
         </span>
       </div>
       <div className="checkout-grid">
         <section className="payment-form">
           <h3 className="step-title">
-            <span>01</span>Contact information
+            <span>01</span>Informasi kontak
           </h3>
           <div className="form-row">
             <label>
-              Full name
+              Nama lengkap
               <input placeholder="Alex Morgan" />
             </label>
             <label>
-              Email address
+              Alamat email
               <input type="email" placeholder="alex@example.com" />
             </label>
           </div>
           <h3 className="step-title">
-            <span>02</span>Payment method
+            <span>02</span>Metode pembayaran
           </h3>
           <div className="payment-methods">
             <button className="active">
-              <Icon name="card" /> Card
+              <Icon name="card" /> Kartu
             </button>
             <button>◉ Pay</button>
             <button>PayPal</button>
           </div>
           <div className="card-form">
             <label>
-              Card number
+              Nomor kartu
               <div className="input-icon">
                 <input placeholder="1234  5678  9012  3456" />
                 <Icon name="card" />
@@ -909,50 +909,50 @@ function Checkout({ go }: { go: (p: Page) => void }) {
             </label>
             <div className="form-row">
               <label>
-                Expiry date
-                <input placeholder="MM / YY" />
+                Tanggal kedaluwarsa
+                <input placeholder="BB / TT" />
               </label>
               <label>
-                Security code
+                Kode keamanan
                 <input placeholder="CVV" />
               </label>
             </div>
             <label className="save-card">
-              <input type="checkbox" /> Save this card for future bookings
+              <input type="checkbox" /> Simpan kartu ini untuk pemesanan berikutnya
             </label>
           </div>
         </section>
         <aside className="summary-card checkout-summary">
-          <span className="eyebrow">ORDER SUMMARY</span>
+          <span className="eyebrow">RINGKASAN PESANAN</span>
           <div className="summary-movie">
             <img src="/assets/eclipse-protocol.png" alt="" />
             <div>
               <h3>Eclipse Protocol</h3>
-              <p>IMAX · 2h 18m</p>
+              <p>IMAX · 2j 18m</p>
               <Rating value="8.9" />
             </div>
           </div>
           <dl>
             <div>
-              <dt>Date & time</dt>
-              <dd>Sat, Sep 28 · 7:20 PM</dd>
+              <dt>Tanggal & waktu</dt>
+              <dd>Sab, 28 Sep · 19.20</dd>
             </div>
             <div>
-              <dt>Cinema</dt>
+              <dt>Bioskop</dt>
               <dd>CINÉRA Grand Central</dd>
             </div>
             <div>
-              <dt>Seats</dt>
+              <dt>Kursi</dt>
               <dd>F7, F8</dd>
             </div>
           </dl>
           <div className="price-lines">
             <p>
-              <span>Tickets (2)</span>
+              <span>Tiket (2)</span>
               <b>$48.00</b>
             </p>
             <p>
-              <span>Booking fee</span>
+              <span>Biaya pemesanan</span>
               <b>$3.50</b>
             </p>
           </div>
@@ -961,9 +961,9 @@ function Checkout({ go }: { go: (p: Page) => void }) {
             <strong>$51.50</strong>
           </div>
           <Button onClick={() => setPaid(true)}>
-            <Icon name="shield" size={17} /> Confirm payment
+            <Icon name="shield" size={17} /> Konfirmasi pembayaran
           </Button>
-          <p className="terms">By confirming, you agree to our booking terms and refund policy.</p>
+          <p className="terms">Dengan mengonfirmasi, kamu menyetujui syarat pemesanan dan kebijakan pengembalian dana kami.</p>
         </aside>
       </div>
     </main>
@@ -974,9 +974,9 @@ function Tickets({ go }: { go: (p: Page) => void }) {
   return (
     <main className="page container tickets-page">
       <div className="page-title">
-        <span className="eyebrow">YOUR CINÉRA</span>
-        <h1>My tickets</h1>
-        <p>Everything you need for your next visit.</p>
+        <span className="eyebrow">CINÉRA-MU</span>
+        <h1>Tiket saya</h1>
+        <p>Semua yang kamu butuhkan untuk kunjunganmu berikutnya.</p>
       </div>
       <div className="ticket-card">
         <div className="ticket-visual">
@@ -984,29 +984,29 @@ function Tickets({ go }: { go: (p: Page) => void }) {
         </div>
         <div className="ticket-info">
           <span className="ticket-status">
-            <i /> UPCOMING
+            <i /> AKAN DATANG
           </span>
           <h2>Eclipse Protocol</h2>
-          <p>IMAX · English · PG-13</p>
+          <p>IMAX · Inggris · PG-13</p>
           <div className="ticket-facts">
             <div>
-              <span>DATE</span>
-              <b>Sat, Sep 28</b>
+              <span>TANGGAL</span>
+              <b>Sab, 28 Sep</b>
             </div>
             <div>
-              <span>TIME</span>
-              <b>7:20 PM</b>
+              <span>WAKTU</span>
+              <b>19.20</b>
             </div>
             <div>
-              <span>SEATS</span>
+              <span>KURSI</span>
               <b>F7, F8</b>
             </div>
             <div>
-              <span>CINEMA</span>
+              <span>BIOSKOP</span>
               <b>Grand Central</b>
             </div>
           </div>
-          <small>Booking ID: CNR-2809-EP7F</small>
+          <small>ID Pemesanan: CNR-2809-EP7F</small>
         </div>
         <div className="ticket-perf" />
         <div className="qr-side">
@@ -1015,18 +1015,18 @@ function Tickets({ go }: { go: (p: Page) => void }) {
               <i key={i} className={(i * 7 + (i % 5)) % 3 ? "dark" : ""} />
             ))}
           </div>
-          <b>SCAN AT ENTRY</b>
-          <span>Admit 2</span>
+          <b>PINDAI SAAT MASUK</b>
+          <span>Untuk 2 orang</span>
         </div>
       </div>
       <div className="empty-note">
         <Icon name="ticket" size={26} />
         <div>
-          <h3>Ready for your next story?</h3>
-          <p>Explore what’s now showing at a CINÉRA near you.</p>
+          <h3>Siap untuk kisah berikutnya?</h3>
+          <p>Jelajahi film yang sedang tayang di CINÉRA terdekat.</p>
         </div>
         <Button variant="outline" onClick={() => go("movies")}>
-          Browse movies
+          Jelajahi film
         </Button>
       </div>
     </main>
@@ -1042,35 +1042,35 @@ function Auth({ mode, go }: { mode: "login" | "register"; go: (p: Page) => void 
         <div className="auth-quote">
           <span>“</span>
           <p>
-            Stories feel different
+            Cerita terasa berbeda
             <br />
-            on the big screen.
+            di layar lebar.
           </p>
-          <small>WELCOME TO CINÉRA</small>
+          <small>SELAMAT DATANG DI CINÉRA</small>
         </div>
       </div>
       <div className="auth-panel">
         <Logo go={go} />
         <div className="auth-form">
-          <span className="eyebrow">{register ? "JOIN CINÉRA" : "WELCOME BACK"}</span>
-          <h1>{register ? "Create your account" : "Sign in to your account"}</h1>
+          <span className="eyebrow">{register ? "GABUNG CINÉRA" : "SELAMAT DATANG KEMBALI"}</span>
+          <h1>{register ? "Buat akunmu" : "Masuk ke akunmu"}</h1>
           <p>
             {register
-              ? "One account. Every unforgettable cinema experience."
-              : "Your tickets, saved seats and cinema moments are waiting."}
+              ? "Satu akun. Setiap pengalaman bioskop yang tak terlupakan."
+              : "Tiket, kursi favorit, dan momen bioskopmu sedang menunggu."}
           </p>
           {register && (
             <label>
-              Full name
-              <input placeholder="Your full name" />
+              Nama lengkap
+              <input placeholder="Nama lengkapmu" />
             </label>
           )}
           <label>
-            Email address
-            <input type="email" placeholder="you@example.com" />
+            Alamat email
+            <input type="email" placeholder="kamu@example.com" />
           </label>
           <label>
-            Password
+            Kata sandi
             <div className="input-icon">
               <input type="password" placeholder="••••••••" />
               <Icon name="eye" size={18} />
@@ -1079,17 +1079,17 @@ function Auth({ mode, go }: { mode: "login" | "register"; go: (p: Page) => void 
           {!register && (
             <div className="form-help">
               <label>
-                <input type="checkbox" /> Remember me
+                <input type="checkbox" /> Ingat aku
               </label>
-              <button>Forgot password?</button>
+              <button>Lupa kata sandi?</button>
             </div>
           )}
           <Button onClick={() => go("home")}>
-            {register ? "Create account" : "Sign in"} <Icon name="arrow" size={17} />
+            {register ? "Buat akun" : "Masuk"} <Icon name="arrow" size={17} />
           </Button>
           <div className="or">
             <span />
-            OR CONTINUE WITH
+            ATAU LANJUTKAN DENGAN
             <span />
           </div>
           <div className="socials">
@@ -1097,9 +1097,9 @@ function Auth({ mode, go }: { mode: "login" | "register"; go: (p: Page) => void 
             <button>●&nbsp;&nbsp; Apple</button>
           </div>
           <p className="switch-auth">
-            {register ? "Already a member?" : "New to CINÉRA?"}{" "}
+            {register ? "Sudah jadi anggota?" : "Baru di CINÉRA?"}{" "}
             <button onClick={() => go(register ? "login" : "register")}>
-              {register ? "Sign in" : "Create an account"}
+              {register ? "Masuk" : "Buat akun"}
             </button>
           </p>
         </div>
@@ -1114,13 +1114,13 @@ function Footer({ go }: { go: (p: Page) => void }) {
       <div className="container footer-inner">
         <div>
           <Logo go={go} />
-          <p>Stories deserve the big screen.</p>
+          <p>Cerita layak tampil di layar lebar.</p>
         </div>
         <div className="footer-links">
-          <button onClick={() => go("movies")}>Movies</button>
-          <button onClick={() => go("cinemas")}>Cinemas</button>
-          <button onClick={() => go("tickets")}>My tickets</button>
-          <button>Help</button>
+          <button onClick={() => go("movies")}>Film</button>
+          <button onClick={() => go("cinemas")}>Bioskop</button>
+          <button onClick={() => go("tickets")}>Tiket saya</button>
+          <button>Bantuan</button>
         </div>
         <small>© 2025 CINÉRA CINEMAS</small>
       </div>
@@ -1135,7 +1135,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   useEffect(() => {
-    document.title = "CINÉRA — Stories on the big screen";
+    document.title = "CINÉRA — Cerita di layar lebar";
   }, []);
   const content = useMemo(() => {
     if (page === "home") return <Home go={go} />;
